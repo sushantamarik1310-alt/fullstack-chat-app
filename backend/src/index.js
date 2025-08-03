@@ -11,10 +11,10 @@ import messageRoutes from "./routes/message.routes.js"
 
 import { app, server } from "./lib/socket1.js";
 
-dotenv.config()
-
 const port=process.env.PORT;
 const __dirname = path.resolve();
+
+dotenv.config({ path: path.resolve(__dirname, '../../.env') });
 
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ limit: "10mb", extended: true }));
